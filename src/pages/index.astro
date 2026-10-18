@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Rockola Digital — Pide tu música"
+  description="Elige hasta 2 canciones y envía tu pedido musical por WhatsApp desde tu mesa."
+>
+  <div class="contenedor">
+    <!-- Encabezado -->
+    <h1 class="home__title">
+      ¿Qué quieres <span class="home__title-highlight">hacer hoy?</span>
+    </h1>
+    <p class="home__subtitle">Elige una opción y te atendemos en tu mesa.</p>
+
+    <!-- Opciones Principales (Cards) -->
+    <div class="home__options">
+      <!-- Opción 1: Pedir Música -->
+      <a href="/musicas" class="option-card option-card--neon">
+        <div class="option-card__glow option-card__glow--neon"></div>
+
+        <h2 class="option-card__title">Pedir Música</h2>
+        <p class="option-card__description">
+          Elige hasta 2 canciones para cantar
+        </p>
+
+        <!-- Ícono ChevronRight (SVG equivalente a Lucide <ChevronRight />) -->
+        <svg
+          class="option-card__arrow option-card__arrow--neon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+
+      <!-- Opción 2: Pedir Bebidas o Snacks -->
+      <a href="/carta" class="option-card option-card--emerald">
+        <div class="option-card__glow option-card__glow--emerald"></div>
+
+        <h2 class="option-card__title">Pedir Bebidas o Snacks</h2>
+        <p class="option-card__description">
+          Pide tragos, cervezas y piqueos directo a tu mesa
+        </p>
+
+        <!-- Ícono ChevronRight -->
+        <svg
+          class="option-card__arrow option-card__arrow--emerald"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Variables base del tema nocturno */
+  :root {
+    --color-bg: #090d16;
+    --color-bg-fade: rgba(9, 13, 22, 0.4);
+    --color-text: #f8fafc;
+    --color-muted: #94a3b8;
+    --color-card-bg: rgba(19, 27, 46, 0.65);
+    --color-card-border: rgba(255, 255, 255, 0.1);
+
+    /* Gradientes y sombras Neón (Música) */
+    --gradient-neon: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    --color-neon: #d946ef;
+    --shadow-neon: 0 10px 30px -5px rgba(217, 70, 239, 0.4);
+
+    /* Gradientes y sombras Esmeralda (Carta) */
+    --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --color-emerald: #10b981;
+    --shadow-emerald: 0 10px 30px -5px rgba(16, 185, 129, 0.4);
+  }
+
+  .contenedor {
+    margin: 0 auto;
+    max-width: 36rem;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-bottom: 9rem; /* Espacio para el footer */
+  }
+
+  .home__title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    line-height: 1.25; /* leading-tight */
+    letter-spacing: -0.02em;
+  }
+
+  .home__title-highlight {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .home__subtitle {
+    margin-top: 0.5rem; /* mt-2 */
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
+
+  .home__options {
+    margin-top: 2rem; /* mt-8 */
+    display: grid;
+    gap: 1.25rem; /* gap-5 */
+  }
+
+  /* ==========================================================================
+     BLOQUE: option-card
+     ========================================================================== */
+  .option-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 1.5rem; /* rounded-3xl */
+    padding: 1.5rem; /* p-6 */
+    text-decoration: none;
+    color: inherit;
+    background: var(--color-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-card-border);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .option-card:hover {
+    transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+  }
+
+  .option-card--neon:hover {
+    box-shadow: var(--shadow-neon);
+    border-color: rgba(217, 70, 239, 0.35);
+  }
+
+  .option-card--emerald:hover {
+    box-shadow: var(--shadow-emerald);
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+
+  /* Resplandor decorativo de la esquina superior derecha */
+  .option-card__glow {
+    position: absolute;
+    top: -2.5rem; /* -top-10 */
+    right: -2.5rem; /* -right-10 */
+    width: 10rem; /* w-40 */
+    height: 10rem; /* h-40 */
+    border-radius: 9999px;
+    filter: blur(40px); /* blur-2xl */
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+
+  .option-card__glow--neon {
+    background: var(--gradient-neon);
+    opacity: 0.3;
+  }
+
+  .option-card--neon:hover .option-card__glow--neon {
+    opacity: 0.6; /* group-hover:opacity-60 */
+  }
+
+  .option-card__glow--emerald {
+    background: var(--gradient-emerald);
+    opacity: 0.25;
+  }
+
+  .option-card--emerald:hover .option-card__glow--emerald {
+    opacity: 0.5; /* group-hover:opacity-50 */
+  }
+
+  /* Contenedor del ícono con animación flotante (float-y) */
+  .option-card__icon-wrapper {
+    display: grid;
+    place-items: center;
+    width: 3.5rem; /* w-14 */
+    height: 3.5rem; /* h-14 */
+    border-radius: 1rem; /* rounded-2xl */
+    animation: floatY 3s ease-in-out infinite;
+  }
+
+  .option-card__icon-wrapper--neon {
+    background: var(--gradient-neon);
+    box-shadow: var(--shadow-neon);
+  }
+
+  .option-card__icon-wrapper--emerald {
+    background: var(--gradient-emerald);
+    box-shadow: var(--shadow-emerald);
+  }
+
+  .option-card__icon {
+    width: 1.75rem; /* w-7 */
+    height: 1.75rem; /* h-7 */
+    color: #ffffff;
+  }
+
+  .option-card__emoji {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 1;
+  }
+
+  .option-card__title {
+    margin-top: 1rem; /* mt-4 */
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+  }
+
+  .option-card__description {
+    margin-top: 0.25rem; /* mt-1 */
+    font-size: 0.875rem; /* text-sm */
+    color: var(--color-muted);
+  }
+
+  /* Flecha inferior derecha */
+  .option-card__arrow {
+    position: absolute;
+    bottom: 1.5rem; /* bottom-6 */
+    right: 1.5rem; /* right-6 */
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    transition: transform 0.25s ease;
+  }
+
+  .option-card__arrow--neon {
+    color: var(--color-neon);
+  }
+
+  .option-card__arrow--emerald {
+    color: var(--color-emerald);
+  }
+
+  .option-card:hover .option-card__arrow {
+    transform: translateX(0.25rem); /* group-hover:translate-x-1 */
+  }
+
+  /* Animación flotante suave */
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  /* ==========================================================================
+     RESPONSIVE (sm: min-width 640px)
+     ========================================================================== */
+  @media (min-width: 640px) {
+    .home__hero {
+      margin-inline: 0; /* sm:mx-0 */
+      margin-top: 1rem; /* sm:mt-4 */
+      border-radius: 1.5rem; /* sm:rounded-3xl */
+    }
+
+    .home__title {
+      font-size: 3rem; /* sm:text-5xl */
+    }
+  }
+</style>

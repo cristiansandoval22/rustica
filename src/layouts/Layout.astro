@@ -1,0 +1,60 @@
+---
+// Layout base: fuentes, estilos globales y meta.
+import "../styles/rockola.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+
+    <link rel="stylesheet" href="/src/assets/style.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  .contenedor {
+    margin: 0 auto;
+    max-width: 46rem;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-bottom: 9rem; /* Espacio para el footer */
+  }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  
+</style>

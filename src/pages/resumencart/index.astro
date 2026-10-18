@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import {getTables } from "../../sanity/lib/queries";
+import OrderSummary from "@/components/OrderSummary.jsx";
+
+const tables = await getTables();
+
+
+
+
+---
+
+<Layout title="Resumen del Pedido - Karaoke App" description="Aquí podrás ver el resumen de tu pedido y confirmar tu selección de canciones.">
+  <OrderSummary client:load tables={tables} />
+</Layout>

@@ -1,0 +1,119 @@
+.songs-header {
+text-align: center;
+padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .songs-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
+.btn-add {
+    color: white;
+    background: linear-gradient(135deg,
+            #ab4afb,
+            #ff00b9);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 0;
+}
+
+
+.search-filters {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.card-title{
+    font-size: 1rem;
+}
+.card-artists{
+    font-size: 14px ;
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.card-tags{
+    display: flex;
+    gap: 0.5rem;
+}
+.card-genre{
+    font-size: 11px;
+    color: #ab4afb;
+    background-color: #2E1F51;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+.card-lang{
+    font-size: 11px;
+    color: #00d18f;
+    background-color: #0C3136;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+
+
+
+
+.order-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;    
+}
+.song-count{
+    width: max-content;
+    color: white;
+    background: linear-gradient(135deg,
+            #ab4afb,
+            #ff00b9);
+            padding: 0.2rem 0.5rem;
+}
+
+.andrsrxn--arrow-u-left {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M4.54 8.58h9.9a5.71 5.71 0 0 1 0 11.42H7.11'/%3E%3Cpath d='M7.92 4L6.18 5.74c-1.34 1.34-2 2-2 2.83s.66 1.5 2 2.83l1.74 1.75'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  font-size: 18px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.card__order-info{
+    padding: 2rem 0;
+}
+
+.observations{
+    width: 100%;
+    height: 200px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  resize: none;
+}   
